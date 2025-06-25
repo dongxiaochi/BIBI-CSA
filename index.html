@@ -13,254 +13,73 @@
                     colors: {
                         primary: '#165DFF',
                         success: '#36D399',
-                        warning: '#FFAA33',
-                        dark: '#1F2937',
-                        light: '#F9FAFB'
-                    },
-                    fontFamily: {
-                        inter: ['Inter', 'system-ui', 'sans-serif'],
-                    },
+                    }
                 }
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .certificate-shadow {
-                box-shadow: 0 10px 25px -5px rgba(22, 93, 255, 0.1), 0 8px 10px -6px rgba(22, 93, 255, 0.1);
-            }
-            .animate-fade-in {
-                animation: fadeIn 0.8s ease-in-out;
-            }
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            .animate-pulse-slow {
-                animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            }
-            @keyframes pulse {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0.8; }
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-br from-light to-blue-50 min-h-screen font-inter">
-    <div class="container mx-auto px-4 py-12">
-        <!-- 顶部导航 -->
-        <nav class="flex justify-between items-center mb-10">
-            <div class="flex items-center space-x-2">
-                <i class="fa fa-heartbeat text-primary text-2xl"></i>
-                <span class="text-xl font-bold text-dark">健康证服务平台</span>
-            </div>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#" class="text-gray-600 hover:text-primary transition-colors">首页</a>
-                <a href="#" class="text-gray-600 hover:text-primary transition-colors">办理指南</a>
-                <a href="#" class="text-gray-600 hover:text-primary transition-colors">查询服务</a>
-                <a href="#" class="text-gray-600 hover:text-primary transition-colors">常见问题</a>
-            </div>
-            <button class="md:hidden text-gray-600">
-                <i class="fa fa-bars text-xl"></i>
-            </button>
-        </nav>
-
-        <!-- 主内容区 -->
-        <div class="max-w-3xl mx-auto animate-fade-in">
-            <!-- 成功通知卡片 -->
-            <div class="bg-white rounded-2xl overflow-hidden certificate-shadow mb-8">
-                <div class="bg-success p-6 text-white">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-2xl font-bold">审核通过通知</h2>
-                        <div class="bg-white/20 rounded-full p-2">
-                            <i class="fa fa-check-circle text-xl"></i>
-                        </div>
-                    </div>
-                    <p class="mt-2 opacity-90">您的健康证申请已通过审核，详情如下：</p>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- 顶部成功提示 -->
+        <div class="bg-success text-white p-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl font-bold">查验通过</h1>
+                <div class="bg-white/20 rounded-full p-2">
+                    <i class="fa fa-check-circle text-xl"></i>
                 </div>
-                
-                <!-- 健康证信息 -->
-                <div class="p-6">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                        <div>
-                            <h3 class="text-lg font-semibold text-dark">健康证详情</h3>
-                            <p class="text-gray-600 mt-1">证件编号: 2025QX021982</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="bg-success/10 text-success px-3 py-1 rounded-full text-sm font-medium">
-                                有效证件
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <!-- 个人信息 -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-sm text-gray-500 mb-1">姓名</h4>
-                            <p class="font-medium">王云海</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-sm text-gray-500 mb-1">性别</h4>
-                            <p class="font-medium">男</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-sm text-gray-500 mb-1">出生日期</h4>
-                            <p class="font-medium">2000-05-19</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-sm text-gray-500 mb-1">身份证号</h4>
-                            <p class="font-medium">532128****0519075x</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 证件信息 -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-sm text-gray-500 mb-1">发证机构</h4>
-                            <p class="font-medium">金华市金东区第二人民医院</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-sm text-gray-500 mb-1">签发日期</h4>
-                            <p class="font-medium">2025-06-18</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-sm text-gray-500 mb-1">有效期至</h4>
-                            <p class="font-medium">2026-06-17</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="text-sm text-gray-500 mb-1">体检项目</h4>
-                            <p class="font-medium">常规检查、血液检查、胸透</p>
-                        </div>
-                    </div>
-                    
-                    <!-- QR码区域 -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-lg mb-6">
-                        <h4 class="text-sm text-gray-500 mb-3">健康证二维码</h4>
-                        <div class="bg-white p-3 rounded-lg shadow-sm mb-3">
-                            <img src="bj.png" alt="健康证二维码" class="w-40 h-40 object-cover">
-                        </div>
-                        <p class="text-xs text-gray-500 text-center">扫码验证健康证真伪</p>
-                    </div>
-                    
-                    <!-- 操作按钮 -->
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="flex-1 bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
-                            <i class="fa fa-download mr-2"></i>
-                            下载健康证
-                        </button>
-                        <button class="flex-1 bg-white border border-primary text-primary hover:bg-primary/5 py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
-                            <i class="fa fa-print mr-2"></i>
-                            打印健康证
-                        </button>
-                    </div>
-                </div>
+            </div>
+            <p class="mt-2 opacity-90">恭喜，您的健康证真实有效</p>
+        </div>
+        
+        <!-- 健康证信息 -->
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold">健康证详情</h2>
+                <span class="bg-success/10 text-success text-xs px-3 py-1 rounded-full">有效证件</span>
             </div>
             
-            <!-- 使用指南 -->
-            <div class="bg-white rounded-2xl overflow-hidden certificate-shadow p-6 mb-8">
-                <h3 class="text-lg font-semibold text-dark mb-4 flex items-center">
-                    <i class="fa fa-info-circle text-primary mr-2"></i>
-                    健康证使用指南
-                </h3>
-                <ul class="space-y-3 text-gray-600">
-                    <li class="flex items-start">
-                        <i class="fa fa-check-circle text-success mt-1 mr-2"></i>
-                        <span>本健康证有效期为1年，请在有效期内使用</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fa fa-check-circle text-success mt-1 mr-2"></i>
-                        <span>使用时请随身携带有效身份证件，配合健康证一同使用</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fa fa-check-circle text-success mt-1 mr-2"></i>
-                        <span>可将电子版健康证保存至手机，方便随时出示</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fa fa-check-circle text-success mt-1 mr-2"></i>
-                        <span>如有遗失或损坏，请及时联系发证机构补办</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- 常见问题 -->
-            <div class="bg-white rounded-2xl overflow-hidden certificate-shadow p-6">
-                <h3 class="text-lg font-semibold text-dark mb-4 flex items-center">
-                    <i class="fa fa-question-circle text-primary mr-2"></i>
-                    常见问题
-                </h3>
-                
-                <!-- 问题1 -->
-                <div class="border-b border-gray-100 pb-4 mb-4">
-                    <button class="flex justify-between items-center w-full text-left focus:outline-none" onclick="toggleFAQ(1)">
-                        <span class="font-medium">健康证到期后如何续办？</span>
-                        <i class="fa fa-chevron-down text-gray-400 transition-transform duration-300" id="faq-icon-1"></i>
-                    </button>
-                    <div class="mt-2 text-gray-600 hidden" id="faq-content-1">
-                        <p>健康证到期前30天内，您可通过本平台重新预约体检并提交申请，体检合格后即可办理新的健康证。续办流程与初次办理相同。</p>
-                    </div>
-                </div>
-                
-                <!-- 问题2 -->
-                <div class="border-b border-gray-100 pb-4 mb-4">
-                    <button class="flex justify-between items-center w-full text-left focus:outline-none" onclick="toggleFAQ(2)">
-                        <span class="font-medium">电子版健康证与纸质版具有同等效力吗？</span>
-                        <i class="fa fa-chevron-down text-gray-400 transition-transform duration-300" id="faq-icon-2"></i>
-                    </button>
-                    <div class="mt-2 text-gray-600 hidden" id="faq-content-2">
-                        <p>是的，电子版健康证与纸质版具有同等法律效力。您可以选择出示电子版或纸质版健康证，建议您同时保存电子版和纸质版以备不时之需。</p>
-                    </div>
-                </div>
-                
-                <!-- 问题3 -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
                 <div>
-                    <button class="flex justify-between items-center w-full text-left focus:outline-none" onclick="toggleFAQ(3)">
-                        <span class="font-medium">如何查询健康证的真伪？</span>
-                        <i class="fa fa-chevron-down text-gray-400 transition-transform duration-300" id="faq-icon-3"></i>
-                    </button>
-                    <div class="mt-2 text-gray-600 hidden" id="faq-content-3">
-                        <p>您可以通过以下方式查询健康证真伪：</p>
-                        <ul class="list-disc pl-5 mt-2 space-y-1">
-                            <li>扫描健康证上的二维码</li>
-                            <li>在本平台输入证件编号和姓名进行查询</li>
-                            <li>拨打发证机构电话进行人工查询</li>
-                        </ul>
-                    </div>
+                    <p class="text-xs text-gray-500">姓名</p>
+                    <p class="font-medium">张三</p>
                 </div>
+                <div>
+                    <p class="text-xs text-gray-500">证件编号</p>
+                    <p class="font-medium">HC2025062512345</p>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-500">签发日期</p>
+                    <p class="font-medium">2025-06-25</p>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-500">有效期至</p>
+                    <p class="font-medium">2026-06-24</p>
+                </div>
+            </div>
+            
+            <!-- 二维码 -->
+            <div class="flex justify-center mb-6">
+                <div class="bg-white p-3 rounded-lg shadow-sm">
+                    <img src="bj.png" alt="健康证二维码" class="w-36 h-36">
+                </div>
+            </div>
+            
+            <!-- 操作按钮 -->
+            <div class="flex space-x-3">
+                <button class="flex-1 bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-lg transition-colors">
+                    <i class="fa fa-download mr-1"></i> 下载
+                </button>
+                <button class="flex-1 bg-white border border-primary text-primary hover:bg-primary/5 py-2 px-4 rounded-lg transition-colors">
+                    <i class="fa fa-print mr-1"></i> 打印
+                </button>
             </div>
         </div>
         
         <!-- 页脚 -->
-        <footer class="mt-12 text-center text-gray-500 text-sm">
-            <p>© 2025 健康证服务平台 版权所有</p>
-            <p class="mt-1">联系方式: 400-123-4567 | 工作时间: 周一至周五 9:00-18:00</p>
-        </footer>
+        <div class="bg-gray-50 px-6 py-4 text-center text-xs text-gray-500">
+            <p>© 2025 健康证服务平台</p>
+        </div>
     </div>
-    
-    <!-- JavaScript -->
-    <script>
-        // 切换FAQ内容显示/隐藏
-        function toggleFAQ(id) {
-            const content = document.getElementById(`faq-content-${id}`);
-            const icon = document.getElementById(`faq-icon-${id}`);
-            
-            content.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
-        
-        // 添加按钮点击效果
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function() {
-                this.classList.add('scale-95');
-                setTimeout(() => {
-                    this.classList.remove('scale-95');
-                }, 200);
-            });
-        });
-    </script>
 </body>
 </html>
-    
